@@ -1,8 +1,8 @@
 import dotenv from 'dotenv'
 dotenv.config()
 import passport from "passport";
-import GoogleStrategy from "passport-google-oauth20"
-import user from "../schema/users";
+import {  Strategy as GoogleStrategy }from "passport-google-oauth20"
+import user from "../schema/users.js";
 GoogleStrategy.Strategy
 
 passport.use(
@@ -13,16 +13,22 @@ passport.use(
             callbackURL:"/auth/google/callback",
         },
             async(accessToken,refreshToken,profile,done)=>{
-                let newuser=user.findOne({email:profile.emails[0].value})
-                if(!newuser){
-                  newuser=await user.create({
+                try{
+                let exisitingUser= await user.findOne({email:profile.emails[0].value})
+                if(!exisitingUser){
+                  exisitingUser=await user.create({
                     username:profile.displayName,
                     email:profile.emails[0].value,
                     googleId:profile.id
                     })
                 }
-                done(null,newuser)
+                done(null,exisitingUser)
+            }catch(err){
+                console.log(`error fron redirecturl ${err}`)
+            }
             }
         
     )
 )
+
+export default passport

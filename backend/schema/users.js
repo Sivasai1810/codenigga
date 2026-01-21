@@ -2,8 +2,14 @@ import mongoose from "mongoose";
 
 const userschema  = new mongoose.Schema(
     {
+         userID:{
+            type:String,
+            required:true,
+            unique:true
+         },
+
         username:{
- type:String
+            type:String
         },
         email:{
             type:String,
@@ -13,7 +19,9 @@ const userschema  = new mongoose.Schema(
         password:{
             type:String,
         },
-        googleId
+        googleId:{
+            type:String
+        }
         
     },
     {timestamps:true}

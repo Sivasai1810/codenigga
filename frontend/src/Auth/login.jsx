@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./auth.css";
 import Codeniggalogo from "../assets/codeniggalogo.png";
 import Rightsideimg from "../assets/rightsideimg.png";
@@ -6,7 +7,26 @@ import Rightsideimg from "../assets/rightsideimg.png";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [message,setMessage]=useState("")
+const handlelogin=async()=>{
+try{
+const res=await axios.post("http://localhost:3000/auth/login",{
+  userEmail:email,
+  password:password
+},{
+  withCredentials:true
+})
+setMessage(res.data.message)
+if(res.data.success===true){
+  console.log("login completed sucessfully")
+}
+else{
+  console.log("unalbe to login ")
+}
+}catch(err){
+  console.log("Login Error at login.jsx",err)
+}
+}
   return (
     <div className="login-page">
       <div className="left-side-part">
@@ -45,7 +65,7 @@ function Login() {
           </div>
 
           <div className="login-page-actions-buttons">
-            <button className="action-button">Login →</button>
+            <button className="action-button" onClick={()=>handlelogin}>Login →</button>
 
             <p className="terms">
               By creating an account, you agree to our{" "}
@@ -60,6 +80,11 @@ function Login() {
           <a href="#"> Sign up</a>
         </div>
       </div>
+      {/* <div className="googlelogin">
+<button onClick={handleGooglelogin}>
+ContinueWithGoogle
+</button>
+      </div> */}
     <div className="right-side-part">
   <div className="right-card">
     <img src={Rightsideimg} alt="Illustration" />
