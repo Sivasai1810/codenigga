@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./auth.css";
 import Codeniggalogo from "../assets/codeniggalogo.png";
 import Rightsideimg from "../assets/rightsideimg.png";
 
 function Signup() {
+  const navigate=useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userName,setUserName]=useState("")
@@ -93,7 +95,7 @@ if(res.data.success===true){
 
         <div className="page-bottom">
           Already have an account ?
-          <a href="#"> Login</a>
+          <button onClick={()=>navigate("/login")}> Login</button>
         </div>
       </div>
       {/* <div className="googlelogin">

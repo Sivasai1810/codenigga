@@ -1,0 +1,165 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #f6f8fa;
+}
+
+/* Container */
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.upload-form {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Project name section */
+.project-name h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-name span {
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.name-input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+}
+
+.name-input-field:focus {
+  border-color: #2563eb;
+}
+
+/* Upload section */
+.file-upload {
+  margin-top: 20px;
+}
+
+.file-upload h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Hidden input */
+.file-input-hidden {
+  display: none;
+}
+
+/* Upload area */
+.input-file {
+  border: 2px dashed #c7d2fe;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.input-file p {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.input-file span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Browse button */
+.file-action-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.file-action-btn:hover {
+  background: #1e40af;
+}
+
+/* Uploaded file list */
+.file-info {
+  margin-top: 16px;
+}
+
+.file-info p {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.file-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.file-info li {
+  font-size: 13px;
+  padding: 6px 8px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* Footer buttons */
+.file-upload-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.file-upload-footer button {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Cancel */
+.file-upload-footer button:first-child {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.file-upload-footer button:first-child:hover {
+  background: #d1d5db;
+}
+
+.file-upload-footer button:last-child {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.file-upload-footer button:last-child:hover {
+  background: #15803d;
+}

@@ -122,7 +122,9 @@
   font-size: 14px;
 }
 
-.page-bottom a {
+.page-bottom button {
+  background: none;
+  outline-color: none;
   color: #5a54f9;
   margin-left: 4px;
   text-decoration: none;

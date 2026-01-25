@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Login from "./Auth/login"
 import Signup from './Auth/signup';
+import Dashboard from './Dashboard/dashboard';
+import Uploadpannel from './upload-pannel/uploadpannel';
+import Filesuploadform from "./upload-forms/fileuploadfrom"
 
 function App() {
 
@@ -9,7 +12,10 @@ function App() {
   <BrowserRouter>
   <Routes>
 <Route path="/login" element={<Login />}/>
-<Route path='/signup' element={<Signup />}></Route>
+<Route path='/' element={<Signup />}></Route>
+<Route path='/dashboard' element={<Dashboard />}></Route>
+<Route path='/fileupload' element={ <Filesuploadform/>}></Route>
+<Route path='/uploadpannel' element={<Uploadpannel />}/>
   </Routes>
   </BrowserRouter>
   </>
